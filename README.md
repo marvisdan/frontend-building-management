@@ -1,4 +1,4 @@
-# Maxen Vision frontend application
+# Building Management frontend application
 
 ## Tech Stack
 
@@ -57,13 +57,6 @@ To deploy this project run
   yarn build
 ```
 
-## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`MAXEN_CONNECT_API`
-
-`MAXEN_CONNECT_API_LOCAL`
 
 ## ✍️ Authors
 
