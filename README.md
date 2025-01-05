@@ -1,4 +1,4 @@
-# Maxen Vision frontend application
+# Frontend Building Management application
 
 ## Tech Stack
 
@@ -6,7 +6,7 @@
 
 ## 🔧 Installation 👨‍🔧
 
-Install vison-webapp with yarn
+Install frontend-building-management with yarn
 It's very recommanded to use [yarn](https://yarnpkg.com/) to start/test this project and/or installing some dependencies.
 
 ```bash
@@ -18,13 +18,13 @@ It's very recommanded to use [yarn](https://yarnpkg.com/) to start/test this pro
 Clone the project
 
 ```bash
-  git clone https://github.com/Maxen-Tech/vision-webapp
+  git clone https://github.com/marvisdan/frontend-building-management
 ```
 
 Go to the project directory
 
 ```bash
-  cd vision-webapp
+  cd frontend-building-management
 ```
 
 Install dependencies
@@ -58,12 +58,6 @@ To deploy this project run
 ```
 
 ## Environment Variables
-
-To run this project, you will need to add the following environment variables to your .env file
-
-`MAXEN_CONNECT_API`
-
-`MAXEN_CONNECT_API_LOCAL`
 
 ## ✍️ Authors
 
