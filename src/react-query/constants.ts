@@ -1,0 +1,30 @@
+const queryKeys = {
+  assets: "assets",
+  assetTypes: "assetTypes",
+  assetCategories: "assetCategories",
+  users: "users",
+  userById: "userById",
+  workorders: "workorders",
+  assetworkorders: "assetworkorders",
+  assetChecklists: "assetChecklists",
+  workorderChecklistItem: "workorderChecklistItem",
+  checklists: "checklists",
+  workorderPriorities: "workorderPriorities",
+  organizationSites: "organizationSites",
+  organization: "organization",
+  organizationContacts: "organizationContacts",
+  assetOrganizationContacts: "assetOrganizationContacts",
+  assetsDocuments: "assetsDocuments",
+  assetNote: "assetNote",
+  assetSpecifications: "assetSpecifications",
+  workorderNote: "workorderNote",
+  workorderStatus: "workorderStatus",
+  assetMetadata: "assetmetadata",
+  specifications: "specifications",
+  measurementunits: "measurementunits",
+  assetWorkorderChecklist: "assetWorkorderChecklist",
+  workorderChecklistByWorkorderAndAsset:
+    "workorderChecklistByWorkorderAndAsset",
+};
+
+export default queryKeys;
