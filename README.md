@@ -1,4 +1,12 @@
+<<<<<<< HEAD
+
 # Frontend Building Management application
+
+=======
+
+# Building Management frontend application
+
+> > > > > > > a0a89d1c57bba920446b63e8fcd3c54c65dd8071
 
 ## Tech Stack
 
