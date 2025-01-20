@@ -1,4 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import {
+  useCallback,
+  // useEffect,
+  useState,
+} from "react";
 import { Helmet } from "react-helmet-async";
 import { Link as RouterLink } from "react-router-dom";
 // @mui
@@ -7,7 +11,7 @@ import {
   Card,
   Container,
   IconButton,
-  LinearProgress,
+  // LinearProgress,
   Table,
   TableBody,
   TableContainer,
@@ -40,14 +44,19 @@ import {
 // sections
 import { Box } from "@mui/system";
 import { isEqual } from "lodash";
-import { useAuthContext } from "../../auth/useAuthContext";
+// import { useAuthContext } from "../../auth/useAuthContext";
 import AssetChangeViewButton from "../../components/assets/AssetChangeViewButton";
 import { TableToolbar, UserTableRow } from "../../components/list";
 import { VIEW } from "../../constants";
-import { useBoolean, useFetchAssets, useRouter } from "../../hooks";
+import {
+  useBoolean,
+  // useFetchAssets,
+  useRouter,
+} from "../../hooks";
 import { useLocales } from "../../locales";
 import { formatAssets } from "../helpers/formatAssets";
 import OrganizationList from "./OrganizationList";
+import { fetchAssetsMock } from "../../_mock/datas";
 
 const TABLE_HEAD = [
   { id: "name", label: "Name", align: "left" },
@@ -92,19 +101,21 @@ export default function AssetListPage() {
   const { themeStretch } = useSettingsContext();
   const [view, setView] = useState<AssetViewType>("grid");
   const confirm = useBoolean();
-  const [tableData, setTableData] = useState<dataTableAssetType[] | []>([]);
+  const [tableData, setTableData] = useState<dataTableAssetType[] | []>(
+    formatAssets(fetchAssetsMock.results)
+  );
   const [filters, setFilters] = useState(defaultFilters);
 
-  const { accessToken } = useAuthContext();
-  const { data, isLoading, isError, error } = useFetchAssets({
-    token: accessToken,
-  });
+  // const { accessToken } = useAuthContext();
+  // const { data, isLoading, isError, error } = useFetchAssets({
+  //   token: accessToken,
+  // });
 
-  useEffect(() => {
-    if (data && data.results) {
-      setTableData(formatAssets(data.results));
-    }
-  }, [data, data?.results]);
+  // useEffect(() => {
+  // 	if (data && data.results) {
+  // 		setTableData(formatAssets(data.results));
+  // 	}
+  // }, [data, data?.results]);
 
   const dataFiltered = applyFilter({
     inputData: tableData,
@@ -169,21 +180,21 @@ export default function AssetListPage() {
     [router]
   );
 
-  if (isLoading) {
-    return (
-      <Container maxWidth={themeStretch ? false : "xl"}>
-        <LinearProgress />
-      </Container>
-    );
-  }
+  // if (isLoading) {
+  // 	return (
+  // 		<Container maxWidth={themeStretch ? false : "xl"}>
+  // 			<LinearProgress />
+  // 		</Container>
+  // 	);
+  // }
 
-  if (isError) {
-    return (
-      <Container maxWidth={themeStretch ? false : "xl"}>
-        <h1>{error?.message}</h1>
-      </Container>
-    );
-  }
+  // if (isError) {
+  // 	return (
+  // 		<Container maxWidth={themeStretch ? false : "xl"}>
+  // 			<h1>{error?.message}</h1>
+  // 		</Container>
+  // 	);
+  // }
 
   return (
     <>

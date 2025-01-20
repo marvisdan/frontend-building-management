@@ -156,7 +156,6 @@ export default function WorkorderForm() {
                   renderOption={(props, { id, name }, index) => (
                     <Box
                       component="li"
-                      key={`${index}-${id}`}
                       sx={{ px: "8px !important" }}
                       {...props}
                     >
@@ -205,7 +204,6 @@ export default function WorkorderForm() {
                   renderOption={(props, { id, name }, index) => (
                     <Box
                       component="li"
-                      key={`${index}-${id}`}
                       sx={{ px: "8px !important" }}
                       {...props}
                     >

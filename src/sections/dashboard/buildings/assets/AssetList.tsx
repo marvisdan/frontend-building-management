@@ -21,6 +21,7 @@ export type AssetItemProps = {
 
 const AssetList = ({ assets }: AssetListProps) => {
   const navigate = useNavigate();
+  console.log({ assets });
 
   return (
     <>

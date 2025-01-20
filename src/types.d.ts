@@ -51,7 +51,7 @@ export type Asset = {
   organizationsite: OrganizationSiteType;
   assetcategory: number;
   assettype: number;
-  organizationcontacts: [];
+  organizationcontacts: any[];
   name: string;
   description: string;
   graph?: {};

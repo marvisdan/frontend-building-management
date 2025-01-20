@@ -1,5 +1,5 @@
+import { mockOrganizationSiteData } from "./_mock/datas/organizationSite";
 import axios from "axios";
-
 import { URL } from "./constants";
 import {
   AssetNoteType,
@@ -9,6 +9,7 @@ import {
   UserResetPassword,
 } from "./types";
 import axiosInstance from "./utils/axiosInstance";
+import { fetchAssetsMock } from "./_mock/datas";
 
 /**
 @description Retrieve user data
@@ -158,7 +159,11 @@ export async function fetchAssets({
     },
   });
   const data = await response.data;
+  return data;
+}
 
+export async function fetchMockAssetsData() {
+  const data = await fetchAssetsMock;
   return data;
 }
 
@@ -464,15 +469,17 @@ export async function fetchOrganization(token: string | null) {
 }
 
 export async function fetchOrganizationSites(token: string | null) {
-  const response = await axios.get(`${URL.base}${URL.organizationSites}`, {
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-  });
+  // Return mock data instead of making API call
+  // const response = await axios.get(`${URL.base}${URL.organizationSites}`, {
+  // 	headers: {
+  // 		"Content-Type": "application/json",
+  // 		Authorization: `Bearer ${token}`
+  // 	}
+  // });
 
-  const data = await response.data;
-  return data;
+  // const data = await response.data;
+  // return data;
+  return Promise.resolve(mockOrganizationSiteData);
 }
 
 export async function fetchOrganizationSiteById(

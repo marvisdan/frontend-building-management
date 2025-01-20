@@ -9,11 +9,13 @@ import { fileData } from "../../file-thumbnail";
 
 // ----------------------------------------------------------------------
 
-type Props = {
-  fileRejections: FileRejection[];
-};
+interface RejectionFilesProps {
+  fileRejections: readonly FileRejection[];
+}
 
-export default function RejectionFiles({ fileRejections }: Props) {
+export default function RejectionFiles({
+  fileRejections,
+}: RejectionFilesProps) {
   if (!fileRejections.length) {
     return null;
   }

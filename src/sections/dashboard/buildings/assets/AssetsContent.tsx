@@ -9,11 +9,11 @@ import {
   LinearProgress,
   Typography,
 } from "@mui/material";
+import { useParams } from "react-router";
 
 // components
 import AssetList from "./AssetList";
 
-import { useParams } from "react-router";
 import { useAuthContext } from "../../../../auth/useAuthContext";
 import { useSettingsContext } from "../../../../components/settings";
 import { useInfiniteAssets } from "../../../../hooks";
@@ -53,6 +53,8 @@ export default function AssetsContent({ filters }: Props) {
     organizationSiteId: Number(id),
   });
 
+  console.log({ data, search2: filters?.search });
+
   if (isError) {
     return (
       <Container
@@ -84,9 +86,18 @@ export default function AssetsContent({ filters }: Props) {
               sx={{ width: "100%", height: "auto" }}
               data-testid="asset-list"
             >
-              {data?.pages.map((pageData: AssetResponseType, key: Key) => (
-                <AssetList key={key} assets={pageData.results} />
-              ))}
+              {data?.pages.map((pageData: AssetResponseType, key: Key) => {
+                const dataFiltered =
+                  pageData && pageData.results
+                    ? pageData.results.filter((d: any) =>
+                        d.name
+                          .toLowerCase()
+                          .includes(filters?.search?.toLowerCase() || "")
+                      )
+                    : [];
+
+                return <AssetList key={key} assets={dataFiltered} />;
+              })}
               {hasNextPage && (
                 <Grid
                   item

@@ -1,5 +1,6 @@
-import { act, renderHook } from "@testing-library/react";
+import { renderHook } from "@testing-library/react";
 import useTable from "../useTable";
+import { act } from "react";
 
 describe("useTable", () => {
   it("should initialize with default values", () => {

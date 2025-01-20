@@ -46,6 +46,8 @@ const AssetsSection = () => {
     assettype: "",
   };
 
+  console.log({ filters });
+
   const FiltersAssetsSchema = Yup.object().shape({
     search: Yup.string(),
     // to implement multiple filters change type to  Yup.mixed()

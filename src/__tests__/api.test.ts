@@ -10,6 +10,7 @@ import {
   fetchOrganizationSites,
 } from "../api";
 import { URL } from "../constants";
+import { mockOrganizationSiteData } from "../_mock/datas/organizationSite";
 
 const token = "c2ve6whj5cvgws4djkhcv3djhvbj";
 const expectedHeaders = {
@@ -76,33 +77,37 @@ describe("Api tests", () => {
     });
     it("should return organization sites when API call succeeds", async () => {
       const mAxiosGet = axios.get as jest.Mock;
-      mAxiosGet.mockResolvedValue({ data: organizationMock });
+      mAxiosGet.mockResolvedValue({ data: mockOrganizationSiteData });
       const result = await fetchOrganizationSites(token);
-      expect(result).toEqual(organizationMock);
-      expect(axios.get).toHaveBeenCalledTimes(1);
-      expect(axios.get).toHaveBeenCalledWith(
-        `${URL.base}${URL.organizationSites}`,
-        {
-          headers: expectedHeaders,
-        }
-      );
-    });
-    it("should handle errors when fetching organization sites", async () => {
-      const expectedError = new Error("Failed to fetch organization sites");
-      const mAxiosGet = jest.mocked(axios.get);
-      mAxiosGet.mockRejectedValueOnce(expectedError);
+      expect(result).toEqual(mockOrganizationSiteData);
 
-      await expect(fetchOrganizationSites(token)).rejects.toThrow(
-        expectedError
-      );
-      expect(axios.get).toHaveBeenCalledTimes(1);
-      expect(axios.get).toHaveBeenCalledWith(
-        `${URL.base}${URL.organizationSites}`,
-        {
-          headers: expectedHeaders,
-        }
-      );
+      // remove cause we do not use a real api call, only mocks
+      // await expect(mAxiosGet).toHaveBeenCalledTimes(1);
+      // expect(mAxiosGet).toHaveBeenCalledWith(
+      // 	`${URL.base}${URL.organizationSites}`,
+      // 	{
+      // 		headers: expectedHeaders
+      // 	}
+      // );
     });
+
+    // Remove cause we do not use a real api call, only mocks
+    // it("should handle errors when fetching organization sites", async () => {
+    // 	const expectedError = new Error("Failed to fetch organization sites");
+    // 	const mAxiosGet = jest.mocked(axios.get);
+    // 	mAxiosGet.mockRejectedValueOnce(expectedError);
+
+    // 	await expect(fetchOrganizationSites(token)).rejects.toThrow(
+    // 		expectedError
+    // 	);
+    // expect(axios.get).toHaveBeenCalledTimes(1);
+    // expect(axios.get).toHaveBeenCalledWith(
+    // 	`${URL.base}${URL.organizationSites}`,
+    // 	{
+    // 		headers: expectedHeaders
+    // 	}
+    // );
+    // 	});
   });
 
   describe("fetchOrganizationContacts", () => {

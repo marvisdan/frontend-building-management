@@ -86,9 +86,9 @@ export default function Router() {
     {
       path: "dashboard",
       element: (
-        <AuthGuard>
-          <DashboardLayout buildings={dataBuildings} />
-        </AuthGuard>
+        // <AuthGuard>
+        <DashboardLayout buildings={dataBuildings} />
+        // </AuthGuard>
       ),
       children: [
         {

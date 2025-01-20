@@ -1,6 +1,6 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { AxiosError } from "axios";
-import { fetchAssets } from "../api";
+import { fetchAssets, fetchMockAssetsData } from "../api";
 import { URL } from "../constants";
 import queryKeys from "../react-query/constants";
 import { AssetResponseType } from "../types";
@@ -33,19 +33,7 @@ const useInfiniteAssets = ({
       limit,
       organizationSiteId,
     ],
-    ({ pageParam = initialUrl }) =>
-      fetchAssets({
-        token,
-        url:
-          process.env.NODE_ENV === "development"
-            ? pageParam
-            : pageParam.replace("http:", "https:"),
-        category,
-        type,
-        search,
-        limit,
-        organizationSiteId,
-      }),
+    ({ pageParam = initialUrl }) => fetchMockAssetsData(),
     {
       getNextPageParam: (lastPage) => lastPage.next || undefined,
     }

@@ -6,10 +6,17 @@ export const fetchAssetsMock = {
     {
       url: "https://connect.maxen.io/assets/5174/",
       id: 5174,
-      organizationsite: 7,
+      organizationsite: {
+        id: 1,
+        address: "123 Test St",
+        created: "2022-02-09T01:46:04.069807Z",
+        name: "Test Site",
+        organization: 1,
+        updated: "2022-11-24T14:49:27.340508Z",
+      },
       assetcategory: 12,
       assettype: 98,
-      organizationcontacts: [],
+      organizationcontacts: [] as Array<never>,
       name: "PA-RC-F",
       description: "Four au rez-de-chaussée de la patisserie",
       graph: {
@@ -29,19 +36,26 @@ export const fetchAssetsMock = {
         ],
       },
       thumbnail:
-        "https://maxen-prod-connect-api.s3.amazonaws.com/maxen_env_prod/thumbnails/4ca7e71a-c699-49c5-a8e6-0ac2988a338e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2NKKH45E7DJRJPAV%2F20221129%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20221129T184117Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d8d81cbe2c734177d12e0947ce69ef6aa011a967e294042f79dff24327dc3feb",
+        "https://www.airconditioningdoctor.com.au/wp-content/uploads/2024/03/20231110_084813-1080x675.webp",
       created: "2022-02-09T01:46:04.069807Z",
       updated: "2022-11-24T14:49:27.340508Z",
     },
     {
       url: "https://connect.maxen.io/assets/5174/",
       id: 5174,
-      organizationsite: 7,
+      organizationsite: {
+        id: 1,
+        address: "123 Test St",
+        created: "2022-02-09T01:46:04.069807Z",
+        name: "Test Site",
+        organization: 1,
+        updated: "2022-11-24T14:49:27.340508Z",
+      },
       assetcategory: 12,
       assettype: 98,
-      organizationcontacts: [],
-      name: "BE-FG-Y",
-      description: "Four au rez-de-chaussée de la patisserie",
+      organizationcontacts: [] as Array<never>,
+      name: "Architectural building project",
+      description: "Achitecural building project with elgant design and lights",
       graph: {
         edges: [],
         nodes: [
@@ -59,19 +73,25 @@ export const fetchAssetsMock = {
         ],
       },
       thumbnail:
-        "https://maxen-prod-connect-api.s3.amazonaws.com/maxen_env_prod/thumbnails/4ca7e71a-c699-49c5-a8e6-0ac2988a338e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2NKKH45E7DJRJPAV%2F20221129%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20221129T184117Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d8d81cbe2c734177d12e0947ce69ef6aa011a967e294042f79dff24327dc3feb",
-      created: "2022-02-09T01:46:04.069807Z",
+        "https://d33dlv5jzgs7pp.cloudfront.net/api/file/b798XB8NT12fEaKp3YNT/convert?fit=clip&format=jpg&h=&quality=75&w=800&compress=true&fit=clip",
       updated: "2022-11-24T14:49:27.340508Z",
     },
     {
       url: "https://connect.maxen.io/assets/5174/",
       id: 5174,
-      organizationsite: 7,
+      organizationsite: {
+        id: 1,
+        address: "123 Test St",
+        created: "2022-02-09T01:46:04.069807Z",
+        name: "Test Site",
+        organization: 1,
+        updated: "2022-11-24T14:49:27.340508Z",
+      },
       assetcategory: 12,
       assettype: 98,
-      organizationcontacts: [],
-      name: "PA-RC-F",
-      description: "Four au rez-de-chaussée de la patisserie",
+      organizationcontacts: [] as Array<never>,
+      name: "Electric Motor XHU9-IU012",
+      description: "Electic Industrial Motor",
       graph: {
         edges: [],
         nodes: [
@@ -89,7 +109,7 @@ export const fetchAssetsMock = {
         ],
       },
       thumbnail:
-        "https://maxen-prod-connect-api.s3.amazonaws.com/maxen_env_prod/thumbnails/4ca7e71a-c699-49c5-a8e6-0ac2988a338e.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2NKKH45E7DJRJPAV%2F20221129%2Fca-central-1%2Fs3%2Faws4_request&X-Amz-Date=20221129T184117Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d8d81cbe2c734177d12e0947ce69ef6aa011a967e294042f79dff24327dc3feb",
+        "https://as2.ftcdn.net/v2/jpg/03/22/68/03/1000_F_322680343_WijhzHcsxQSvanKG991sviBz00BBxHSK.jpg",
       created: "2022-02-09T01:46:04.069807Z",
       updated: "2022-11-24T14:49:27.340508Z",
     },
